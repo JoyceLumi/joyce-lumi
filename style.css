@@ -1,0 +1,197 @@
+:root{
+    --neon-cyan: #0ff;
+    --neon-pink: #f0f;
+    --bg-color: #0a0a0a;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: var(--bg-color);
+    font-family: 'segeo UI', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+body {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.header-title {
+  font-size: 4rem;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+
+.hero {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grap: 6rem;
+    align-items: center;
+}
+
+.content{
+    padding: 2.6rem;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255,0.1);
+}
+
+.neon-button{
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+.neon-button:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-color);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+.profile-card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.2); /* fond semi-transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+}
+.profile-card img {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 96%;
+  object-fit: cover;
+  border-radius: 18px;
+  z-index: 1;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem; /* ajuste si besoin */
+  margin-top: 3rem;
+}
+
+.project-card {
+    background: var(--glass);
+    padding: 0.5rem 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    width: 300px;
+}
+
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(
+        var(--neon-cyan),
+        var(--neon-pink),
+        var(--neon-cyan)
+        );
+        animation: rotate 4s linear infinites;
+    };
+    
+}  
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
+
+.contact {
+    margin-top: 3rem;
+    background: var(--glass);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact li {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+}
+
+.contact a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--neon-pink);
+    text-decoration: underline;
+}
